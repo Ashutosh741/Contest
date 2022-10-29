@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+int32_t main()
+{
+  int t=1;
+  cin>>t;
+  while(t--){
+      int n,len=0,bre=0,ans=0;
+      cin>>n;
+      while(n--){
+        int a,b;
+        cin>>a>>b;
+        if(a > b){
+            len+=b;
+            bre=max(a,bre);
+        }
+        else {
+            len+=a;
+            bre=max(b,bre);
+        }
+      }
+       cout<<2*(len+bre)<<"\n";
+    }
+}
