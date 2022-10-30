@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+bool compareLen(const std::string& a, const std::string& b)
+{
+    return (a.size() < b.size()); 
+}
+int32_t main()
+{
+  int t=1;
+  // cin>>t;
+  while(t--){
+          int n;
+          cin>>n;
+          vector<string>v(n);
+          for(int i=0;i<n;i++)cin>>v[i];
+          sort(v.begin(),v.end(),compareLen);
+        int cnt=1;
+          for(int i=1;i<n;i++){
+            size_t found = v[i].find(v[i-1]);
+            if (found != string::npos){
+                cnt++;
+            }
+          }
+          if(cnt==n){
+            cout<<"YES\n";
+            for(auto it : v)cout<<it<<"\n";
+          }
+          else cout<<"NO\n";
+}
+}
